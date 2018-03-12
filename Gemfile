@@ -33,6 +33,7 @@ group :development, :test do
   gem 'rspec'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'ffaker'
 end
 
 group :development do
