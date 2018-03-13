@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users, skip: [:registrations, :passwords, :sessions]
+
+  namespace :api, defaults: { format: :json } do
+    scope module: :v1 do
+      devise_scope :user do
+        post '/user', to: 'user#create'
+      end
+    end
+  end
 end

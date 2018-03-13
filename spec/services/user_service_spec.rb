@@ -24,14 +24,14 @@ describe UserService do
     context 'user is valid' do
       let(:validity) { true }
 
-      it { is_expected.to equal(user) }
+      it { is_expected.to eq({ user: user }) }
       it { expect(user).to have_received(:save) }
     end
 
     context 'user is invalid' do
       let(:validity) { false }
 
-      it { is_expected.to equal(error_hash.messages) }
+      it { is_expected.to eq({ errors: error_hash.messages }) }
       it { expect(user).not_to have_received(:save) }
     end
   end

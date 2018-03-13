@@ -2,9 +2,9 @@
     def self.build(user)
       if user.valid?
         user.save
-        return user
+        return { user: user }
       end
 
-      user.errors.messages
+      { errors: user.errors.messages }
     end
   end
