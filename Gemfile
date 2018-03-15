@@ -22,6 +22,9 @@ gem 'jwt'
 gem 'bcrypt', '~> 3.1.11'
 gem 'webpacker', '~>3.3'
 
+# for the frontend stylesheets
+gem 'sass-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

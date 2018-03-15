@@ -1,5 +1,15 @@
-<noscript>
-  You need to enable JavaScript to run this app.
-</noscript>
-<div id="root"></div>
-<%= javascript_pack_tag 'diary' %>
+<html>
+  <head>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Neucha" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+    <%= javascript_pack_tag 'diary' %>
+  </body>
+</html>

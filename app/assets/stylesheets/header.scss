@@ -1,0 +1,29 @@
+.header-bar {
+    background-color: $plum;
+    color: $lilac-white;
+
+    .title-box {
+      font-family: 'Neucha', cursive;
+      margin: auto;
+      padding: 7vh 0;
+      font-size: 3rem;
+      letter-spacing: -0.01rem;
+      text-align: center;
+    }
+}
+
+.navigation-bar {
+  display: flex;
+  justify-content: center;
+  background-color: rgba($lilac-white, 0.2);
+
+  .navigation-option {
+    font-size: 2rem;
+    padding: 1rem 3rem;
+  }
+
+  .navigation-option:hover {
+    background-color: rgba($lilac-white, 0.21);
+    color: $amber;
+  }
+}
