@@ -12,4 +12,3 @@ postgresql 10.3
 * Deployment instructions
 TBD
 
-Client is built off the back of christinecha's boilerplate.
