@@ -1,0 +1,26 @@
+body {
+  background-color: $lilac-white;
+  padding: 0;
+  margin: 0;
+  font-family: 'Dosis', sans-serif;
+  color: $plum;
+  font-style: normal;
+  font-size: 1.1rem;
+  line-height: 1.24rem;
+  text-align: left;
+  letter-spacing: 0.05rem;
+}
+
+.center-plane {
+  width: 100%;
+  padding: 2.5rem;
+
+  @media #{$desktop-screen} {
+    margin: auto;
+    width: 50%;
+  }
+}
+
+.label-text {
+  margin-top: 0;
+}
