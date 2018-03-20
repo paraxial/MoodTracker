@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     end
   end
 
+  # Fallback to react routing
   get '*path', to: 'home#index'
 end
