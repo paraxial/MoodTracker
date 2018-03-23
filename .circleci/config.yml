@@ -17,6 +17,11 @@ jobs:
           POSTGRES_USER: MoodTracker_test
           POSTGRES_DB: MoodTracker_test
           POSTGRES_PASSWORD: ""
+    deployment:
+     production:
+       branch: master
+       heroku:
+         appname: todays-mood
     steps:
       - checkout
 
