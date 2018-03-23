@@ -70,10 +70,18 @@ jobs:
         command: |
           bundle exec rspec --profile 10 \
                             --format RspecJunitFormatter \
-                            --out test_results/rspec.xml \
+                            --out reports/rspec.xml \
                             --format progress \
                             $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+      - run:
+            name: Jest tests
+            command: yarn test --ci --testResultsProcessor="jest-junit" --runInBand
+            environment:
+              JEST_JUNIT_OUTPUT: "reports/jest.xml"
 
+      - run:
+            name: Merge test results
+            command: yarn merge -C --out test_results/merged_results.xml reports/rspec.xml reports/jest.xml
 
       # Save test results for timing analysis
       - store_test_results:
