@@ -6,7 +6,7 @@ const Header = ({ children }) => (
       <div className="title-box">
         Today's mood
         <div className="subtitle">
-          A Symptom Tracker
+          A Wellness Tracker
         </div>
       </div>
     </a>
