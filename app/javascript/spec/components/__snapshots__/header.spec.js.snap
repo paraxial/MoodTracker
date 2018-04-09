@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should match snapshot 1`] = `
+<div
+  className="header-bar"
+>
+  <a
+    href="/"
+  >
+    <div
+      className="title-box"
+    >
+      Today's mood
+      <div
+        className="subtitle"
+      >
+        A Symptom Tracker
+      </div>
+    </div>
+  </a>
+  <div
+    className="navigation-bar"
+  >
+    <div>
+      Some child component
+    </div>
+  </div>
+</div>
+`;

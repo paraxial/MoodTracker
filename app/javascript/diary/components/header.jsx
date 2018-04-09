@@ -1,16 +1,17 @@
 import React from 'react';
 
-const Header = () => (
+const Header = ({ children }) => (
   <div className="header-bar">
-    <div className="title-box">
-      Today's mood
-      <div className="subtitle">
-        A Symptom Tracker
+    <a href="/">
+      <div className="title-box">
+        Today's mood
+        <div className="subtitle">
+          A Symptom Tracker
+        </div>
       </div>
-    </div>
+    </a>
     <div className="navigation-bar">
-      <span className="navigation-option">Placeholder</span>
-      <span className="navigation-option">Placeholder</span>
+      {children}
     </div>
   </div>
 );

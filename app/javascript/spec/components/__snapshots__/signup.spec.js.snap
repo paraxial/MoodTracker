@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signup should match snapshot 1`] = `
+<UNDEFINED>
+  <h2
+    className="heading"
+  >
+    Signup
+  </h2>
+  <div
+    className="form-wrapper"
+  >
+    <TextInput
+      callback={[Function]}
+      label="email"
+      name="email"
+      type="email"
+      value={null}
+    />
+    <TextInput
+      callback={[Function]}
+      label="password"
+      name="password"
+      type="password"
+      value={null}
+    />
+    <TextInput
+      callback={[Function]}
+      label="confirm password"
+      name="confirmPassword"
+      type="password"
+      value={null}
+    />
+    <input
+      className="action-button"
+      type="submit"
+      value="Create Account"
+    />
+  </div>
+</UNDEFINED>
+`;

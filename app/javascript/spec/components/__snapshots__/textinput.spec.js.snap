@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signup should match snapshot 1`] = `
+<div
+  className="input-wrapper"
+>
+  <label
+    htmlFor="password-input"
+  >
+    password
+  </label>
+  <input
+    className="text-input"
+    id="password-input"
+    onChange={[Function]}
+    type="password"
+  />
+</div>
+`;

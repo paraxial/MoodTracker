@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: $lilac-white;
   padding: 0;
@@ -12,7 +16,7 @@ body {
 }
 
 .center-plane {
-  width: 100%;
+  max-width: 100%;
   padding: 2.5rem;
 
   @media #{$desktop-screen} {
@@ -28,4 +32,15 @@ body {
 .heading {
   margin-top: 0;
   text-align: center;
+}
+
+.action-button {
+  @include null-appearance;
+  background-color: $plum;
+  color: $lilac-white;
+  border-radius: 0.75rem;
+  font-size: 1.25rem;
+  margin: 2rem;
+  padding: 0.75rem;
+  font-family: 'Dosis', sans-serif;
 }
