@@ -27,6 +27,21 @@ describe('Signup', () => {
   });
 
   test('should validate fields on submission', () => {
+    const invalidState = {
+      email: "not an email",
+      password: "no",
+      confirmPassword: "not matching",
+    };
+    describedClass.setState(...invalidState);
 
+    expect(describedClass.state('emailError')).toEqual(null);
+    expect(describedClass.state('passwordError')).toEqual(null);
+    expect(describedClass.state('confirmPasswordError')).toEqual(null);
+
+    describedClass.find('form').simulate('submit', { preventDefault: jest.fn() });
+
+    expect(describedClass.state('emailError')).toEqual('This is not a valid email');
+    expect(describedClass.state('passwordError')).toEqual('Password must be 8-128 characters long');
+    expect(describedClass.state('confirmPasswordError')).toEqual('Must match password');
   });
 });

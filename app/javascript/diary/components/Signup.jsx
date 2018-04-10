@@ -14,10 +14,51 @@ class Signup extends React.Component {
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.writeErrors = this.writeErrors.bind(this);
   }
 
   handleInputChange(field, value) {
     this.setState({ ...this.state, [field]: value });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    this.writeErrors();
+
+    const { emailError, passwordError, confirmPasswordError } = this.state;
+
+    if (emailError || passwordError || confirmPasswordError) { return null; }
+  }
+
+  writeErrors() {
+    const { email, password, confirmPassword } = this.state;
+    let emailError = null, passwordError = null, confirmPasswordError = null;
+    if(!this.validEmail(email)) { emailError = 'This is not a valid email'; }
+    if(!this.validPassword(password)) { passwordError = 'Password must be 8-128 characters long'; }
+    if(!this.matchingPasswords(password, confirmPassword)) {
+      confirmPasswordError = 'Must match password';
+    }
+
+    this.setState({ ...this.state, emailError, passwordError, confirmPasswordError });
+  }
+
+  validEmail(email) {
+    if(!email) { return false; }
+
+    return email.match(/^.+@.+$/);
+  }
+
+  validPassword(password) {
+    if(!password) { return false; }
+
+    return (password.length >= 8 && password.length < 128);
+  }
+
+  matchingPasswords(password, confirmPassword) {
+    if(!password || !confirmPassword) { return false; }
+
+    return password === confirmPassword;
   }
 
   render() {
@@ -35,7 +76,7 @@ class Signup extends React.Component {
           <h2 className="heading">
             Signup
           </h2>
-          <form className="form-wrapper">
+          <form className="form-wrapper" onSubmit={this.handleSubmit} noValidate>
             <TextInput
               name="email"
               label="email"
