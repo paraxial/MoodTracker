@@ -5,11 +5,9 @@ class Signup extends React.Component {
   constructor() {
     super();
     this.state = {
-      user: {
-        email: null,
-        password: null,
-        confirmPassword: null,
-      },
+      email: null,
+      password: null,
+      confirmPassword: null,
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -20,7 +18,7 @@ class Signup extends React.Component {
   }
 
   render() {
-    const { email, password, confirmPassword } = this.state.user;
+    const { email, password, confirmPassword } = this.state;
 
     return (
         <React.Fragment>

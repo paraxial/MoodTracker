@@ -18,4 +18,20 @@ describe('Signup', () => {
 
     expect(page).toMatchSnapshot();
   });
+
+  test('should append focus class on focus', () => {
+
+  });
+
+  test('should remove focus class on blur when value is empty', () => {
+
+  });
+
+  test('should not remove focus class on blur when value is present', () => {
+
+  });
+
+  test('should call callback function with field and value on change', () => {
+
+  });
 });

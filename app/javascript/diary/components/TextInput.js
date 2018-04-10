@@ -4,26 +4,50 @@ import PropTypes from 'prop-types';
 class TextInput extends React.Component {
   constructor() {
     super();
+    this.handleBlur = this.handleBlur.bind(this);
     this.change = this.change.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
+    this.changeFocus = this.changeFocus.bind(this);
+
+    this.state = {
+      focus: false,
+    };
+  }
+
+  handleBlur(event) {
+    const { value } = this.props;
+    if(!value || value.length === 0) { this.changeFocus(false) }
+  }
+
+  handleFocus(event) {
+    this.changeFocus(true);
   }
 
   change(event) {
     this.props.callback(event.target.id, event.target.value);
   }
 
+  changeFocus(newValue) {
+    this.setState({...this.state, focus: newValue});
+  }
+
   render() {
     const { label, name, type, value, callback } = this.props;
+    const { focus } = this.state;
+    const focusedClass = focus ? ' focus' : '';
 
     return(
       <div className="input-wrapper">
-        <label htmlFor={name}>
+        <label htmlFor={name} className={`input-label${focusedClass}`}>
           {label}
         </label>
         <input
-          className="text-input"
+          className={`text-input${focusedClass}`}
           type={type}
           id={name}
           onChange={this.change}
+          onFocus={this.handleFocus}
+          onBlur={this.handleBlur}
         />
       </div>
     )

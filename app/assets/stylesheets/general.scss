@@ -37,10 +37,20 @@ body {
 .action-button {
   @include null-appearance;
   background-color: $plum;
-  color: $lilac-white;
   border-radius: 0.75rem;
+  border: none;
+  color: $lilac-white;
+  font-family: 'Dosis', sans-serif;
   font-size: 1.25rem;
   margin: 2rem;
   padding: 0.75rem;
-  font-family: 'Dosis', sans-serif;
+}
+
+.action-button:hover {
+  background-color: rgba($plum, 0.9);
+}
+
+.action-button:focus {
+  background-color: rgba($plum, 0.7);
+  outline: none;
 }

@@ -5,6 +5,7 @@ exports[`Signup should match snapshot 1`] = `
   className="input-wrapper"
 >
   <label
+    className="input-label"
     htmlFor="password-input"
   >
     password
@@ -12,7 +13,9 @@ exports[`Signup should match snapshot 1`] = `
   <input
     className="text-input"
     id="password-input"
+    onBlur={[Function]}
     onChange={[Function]}
+    onFocus={[Function]}
     type="password"
   />
 </div>
