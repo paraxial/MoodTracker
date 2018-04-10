@@ -25,10 +25,18 @@ class Signup extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.writeErrors();
-
-    const { emailError, passwordError, confirmPasswordError } = this.state;
+    const {
+      email,
+      password,
+      confirmPassword,
+      emailError,
+      passwordError,
+      confirmPasswordError,
+    } = this.state;
 
     if (emailError || passwordError || confirmPasswordError) { return null; }
+
+    // backendManager.post('createUser', {email, password});
   }
 
   writeErrors() {
