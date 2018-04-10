@@ -5,27 +5,35 @@ class Signup extends React.Component {
   constructor() {
     super();
     this.state = {
-      email: null,
-      password: null,
-      confirmPassword: null,
+      user: {
+        email: null,
+        password: null,
+        confirmPassword: null,
+      },
+      errors: {
+        emailMessage: null,
+        passwordMessage: null,
+        confirmPasswordMessage: null,
+      },
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   handleInputChange(field, value) {
-    this.setState({ ...this.state, [field]: value });
+    const newUser = { ...this.state.user, [field]: value };
+    this.setState({ ...this.state, user: newUser });
   }
 
   render() {
-    const { email, password, confirmPassword } = this.state;
+    const { email, password, confirmPassword } = this.state.user;
 
     return (
         <React.Fragment>
           <h2 className="heading">
             Signup
           </h2>
-          <div className="form-wrapper">
+          <form className="form-wrapper">
             <TextInput
               name="email"
               label="email"
@@ -48,7 +56,7 @@ class Signup extends React.Component {
               callback={this.handleInputChange}
             />
             <input type="submit" className="action-button" value="Create Account"/>
-          </div>
+          </form>
         </React.Fragment>
       );
   }
