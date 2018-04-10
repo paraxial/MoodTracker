@@ -1,17 +1,15 @@
 import React from 'react';
-import ShallowRenderer from 'react-test-renderer/shallow';
+import { shallow } from 'enzyme';
 import Header from '../../diary/components/Header';
 
 describe('Header', () => {
   test('should match snapshot', () => {
-    const renderer = new ShallowRenderer();
-    const page = renderer
-      .render(
+    const page = shallow(
         <Header>
           <div>Some child component</div>
         </Header>
       );
 
-    expect(page).toMatchSnapshot();
+    expect(page.html()).toMatchSnapshot();
   });
 });

@@ -1,13 +1,11 @@
 import React from 'react';
-import ShallowRenderer from 'react-test-renderer/shallow';
+import { shallow } from 'enzyme';
 import Signup from '../../diary/components/Signup';
 
 describe('Signup', () => {
   test('should match snapshot', () => {
-    const renderer = new ShallowRenderer();
-    const page = renderer
-      .render(<Signup />);
+    const page = shallow(<Signup />);
 
-    expect(page).toMatchSnapshot();
+    expect(page.html()).toMatchSnapshot();
   });
 });

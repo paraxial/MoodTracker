@@ -16,7 +16,11 @@ class TextInput extends React.Component {
 
   handleBlur(event) {
     const { value } = this.props;
-    if(!value || value.length === 0) { this.changeFocus(false) }
+    if(!value || value.length === 0) {
+      this.changeFocus(false);
+      return;
+    }
+    this.changeFocus(true);
   }
 
   handleFocus(event) {

@@ -1,29 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header should match snapshot 1`] = `
-<div
-  className="header-bar"
->
-  <a
-    href="/"
-  >
-    <div
-      className="title-box"
-    >
-      Today's mood
-      <div
-        className="subtitle"
-      >
-        A Wellness Tracker
-      </div>
-    </div>
-  </a>
-  <div
-    className="navigation-bar"
-  >
-    <div>
-      Some child component
-    </div>
-  </div>
-</div>
-`;
+exports[`Header should match snapshot 1`] = `"<div class=\\"header-bar\\"><a href=\\"/\\"><div class=\\"title-box\\">Today&#x27;s mood<div class=\\"subtitle\\">A Wellness Tracker</div></div></a><div class=\\"navigation-bar\\"><div>Some child component</div></div></div>"`;
