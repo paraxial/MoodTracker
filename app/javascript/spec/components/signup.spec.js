@@ -15,17 +15,15 @@ describe('Signup', () => {
 
   test('should change state in response to callback', () => {
     const initialState = {
-      user: {
-        email: null,
-        password: null,
-        confirmPassword: null,
-      },
+      email: null,
+      password: null,
+      confirmPassword: null,
     };
     const newEmail = "anything@sample.com";
 
     expect(describedClass.state()).toEqual(expect.objectContaining(initialState));
     describedClass.instance().handleInputChange('email', newEmail);
-    expect(describedClass.state().user.email).toEqual(newEmail);
+    expect(describedClass.state('email')).toEqual(newEmail);
   });
 
   test('should validate fields on submission', () => {

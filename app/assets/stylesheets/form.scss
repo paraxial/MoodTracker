@@ -37,3 +37,10 @@
   padding: 1rem 0.5rem;
   transition: height 0.2s linear 0s;
 }
+
+.error-text {
+  font-weight: bold;
+  color: $umber;
+  padding: 0.4rem;
+  text-shadow: $amber 1px 0 0.9rem;
+}

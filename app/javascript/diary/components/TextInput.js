@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 class TextInput extends React.Component {
   constructor() {
     super();
-    this.handleBlur = this.handleBlur.bind(this);
     this.change = this.change.bind(this);
+    this.errorText = this.errorText.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
     this.changeFocus = this.changeFocus.bind(this);
 
@@ -35,8 +36,17 @@ class TextInput extends React.Component {
     this.setState({...this.state, focus: newValue});
   }
 
+  errorText(error) {
+    if(!error || error.length === 0) { return null; }
+    return(
+      <div className="error-text">
+        {error}
+      </div>
+    );
+  }
+
   render() {
-    const { label, name, type, value, callback } = this.props;
+    const { label, name, type, value, callback, error } = this.props;
     const { focus } = this.state;
     const focusedClass = focus ? ' focus' : '';
 
@@ -53,18 +63,19 @@ class TextInput extends React.Component {
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
         />
+        {this.errorText(error)}
       </div>
     )
   };
 }
 
-
 TextInput.propTypes = {
-  label: PropTypes.string.isRequired,
-  value: PropTypes.string,
   callback: PropTypes.func.isRequired,
+  error: PropTypes.string,
+  label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   type: PropTypes.oneOf(['password', 'email', 'text', 'number', 'tel']).isRequired,
+  value: PropTypes.string,
 };
 
 export default TextInput;

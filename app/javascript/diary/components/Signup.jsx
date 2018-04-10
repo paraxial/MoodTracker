@@ -5,28 +5,30 @@ class Signup extends React.Component {
   constructor() {
     super();
     this.state = {
-      user: {
-        email: null,
-        password: null,
-        confirmPassword: null,
-      },
-      errors: {
-        emailMessage: null,
-        passwordMessage: null,
-        confirmPasswordMessage: null,
-      },
+      email: null,
+      password: null,
+      confirmPassword: null,
+      emailError: null,
+      passwordError: null,
+      confirmPasswordError: null,
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   handleInputChange(field, value) {
-    const newUser = { ...this.state.user, [field]: value };
-    this.setState({ ...this.state, user: newUser });
+    this.setState({ ...this.state, [field]: value });
   }
 
   render() {
-    const { email, password, confirmPassword } = this.state.user;
+    const {
+      email,
+      password,
+      confirmPassword,
+      emailError,
+      passwordError,
+      confirmPasswordError,
+    } = this.state;
 
     return (
         <React.Fragment>
@@ -39,6 +41,7 @@ class Signup extends React.Component {
               label="email"
               type="email"
               value={email}
+              error={emailError}
               callback={this.handleInputChange}
             />
             <TextInput
@@ -46,6 +49,7 @@ class Signup extends React.Component {
               label="password"
               type="password"
               value={password}
+              error={passwordError}
               callback={this.handleInputChange}
             />
             <TextInput
@@ -53,6 +57,7 @@ class Signup extends React.Component {
               label="confirm password"
               type="password"
               value={confirmPassword}
+              error={confirmPasswordError}
               callback={this.handleInputChange}
             />
             <input type="submit" className="action-button" value="Create Account"/>

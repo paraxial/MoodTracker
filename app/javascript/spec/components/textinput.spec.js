@@ -12,6 +12,7 @@ describe('TextInput', () => {
           name="password-input"
           type="password"
           value="some value"
+          error=""
           callback={() => (null)}
         />
       );
@@ -51,5 +52,21 @@ describe('TextInput', () => {
     describedClass.find('.text-input').first().simulate('change', simulatedChange);
 
     expect(mockedCallback).toBeCalledWith(field, value);
+  });
+
+  test('should not render error display when no error provided', () => {
+    describedClass.setProps({ error: '' });
+
+    expect(describedClass.find(".error-text")).toHaveLength(0);
+  });
+
+  test('should render error display when error provided', () => {
+    const errorText = 'some error text';
+    describedClass.setProps({ error: errorText });
+
+    const errorNodes = describedClass.find(".error-text")
+
+    expect(errorNodes).toHaveLength(1);
+    expect(errorNodes.first().text()).toEqual(errorText);
   });
 });
