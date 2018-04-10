@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Signup should match snapshot 1`] = `"<div class=\\"input-wrapper\\"><label for=\\"password-input\\" class=\\"input-label\\">password</label><input type=\\"password\\" class=\\"text-input\\" id=\\"password-input\\"/></div>"`;
+exports[`TextInput should match snapshot 1`] = `"<div class=\\"input-wrapper\\"><label for=\\"password-input\\" class=\\"input-label\\">password</label><input type=\\"password\\" class=\\"text-input\\" id=\\"password-input\\"/></div>"`;

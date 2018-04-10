@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import TextInput from '../../diary/components/TextInput';
 
-describe('Signup', () => {
+describe('TextInput', () => {
   let describedClass;
 
   beforeEach(() => {

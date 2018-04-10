@@ -4,12 +4,12 @@ import Header from '../../diary/components/Header';
 
 describe('Header', () => {
   test('should match snapshot', () => {
-    const page = shallow(
+    const describedClass = shallow(
         <Header>
           <div>Some child component</div>
         </Header>
       );
 
-    expect(page.html()).toMatchSnapshot();
+    expect(describedClass.html()).toMatchSnapshot();
   });
 });
