@@ -45,7 +45,7 @@ describe('TextInput', () => {
   test('should call callback function with field and value on change', () => {
     const field = 'simulatedField';
     const value = 'simulatedValue';
-    const simulatedChange = { target: { id: field, value: value }}
+    const simulatedChange = { target: { id: field, value: value } }
     const mockedCallback = jest.fn();
 
     describedClass.setProps({ callback: mockedCallback });
